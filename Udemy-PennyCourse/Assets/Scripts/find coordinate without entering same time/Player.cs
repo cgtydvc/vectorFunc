@@ -13,8 +13,14 @@ public class Player : MonoBehaviour
         diff = fuel.transform.position - this.transform.position;
         Coord coord = PlayerMath.GetNormal(new Coord(diff));
         diff = coord.ToVector();
-        float a = PlayerMath.Angle(new Coord(0, 0, 1), new Coord(diff)) * (180.0f / Mathf.PI);
-        Debug.Log("angle : " + a);
+        float a = PlayerMath.Angle(new Coord(this.transform.forward), new Coord(diff));
+        bool clockwise = false;
+        if (PlayerMath.Cross(new Coord(this.transform.forward),coord).y < 0)
+        {
+            clockwise = true;
+        }
+        Coord coordRot = PlayerMath.Rotate(new Coord(this.transform.forward), a, clockwise);
+        this.transform.forward = new Vector3(coordRot.x, coordRot.y, coordRot.z);
     }
 
     void Update()

@@ -31,5 +31,19 @@ public class PlayerMath : MonoBehaviour
         float dotPoint = Dot(vector1, vector2) / (Distance(new Coord(0, 0, 0), vector1) * Distance(new Coord(0, 0, 0), vector2));
         return Mathf.Acos(dotPoint);
     }
+    static public Coord Rotate(Coord vector, float angle, bool clockwise)
+    {
+        if (clockwise)
+        {
+            angle = 2 * Mathf.PI - angle;
+        }
+        float xVal = vector.x * Mathf.Cos(angle) - vector.y * Mathf.Sin(angle);
+        float yVal = vector.x * Mathf.Sin(angle) + vector.y * Mathf.Cos(angle);
+        return new Coord(xVal, yVal, 0);
+    }
+    static public Coord Cross(Coord vec1,Coord vec2)
+    {
+        return new Coord(vec1.y * vec2.z - vec1.z * vec2.y, vec1.z * vec2.x - vec1.x * vec2.z, vec1.x * vec2.y - vec1.y * vec2.x);
+    }
 
 }
