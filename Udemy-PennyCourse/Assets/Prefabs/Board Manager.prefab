@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8703909870338790598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8703909870338790599}
+  - component: {fileID: 8703909870338790596}
+  m_Layer: 0
+  m_Name: Board Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8703909870338790599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8703909870338790598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8703909870338790596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8703909870338790598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7faf1b98c67996419396165dd0ac521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collects:
+  - {fileID: 5000454385170624160, guid: d65a4d5d4b8b259419302fc2592122b0, type: 3}
+  - {fileID: 1216814788424993650, guid: 387b803df4f6bdf4ca7f0e056cee6f2a, type: 3}
+  - {fileID: 5281661675873535076, guid: 5cea87c99b7dbce48beadd1e3ac43a55, type: 3}
+  - {fileID: 8398556803329877006, guid: 616efdd4c83e31547a9ddb307dcba30d, type: 3}
+  - {fileID: 1119299376872244386, guid: b341668f4aed782458d3590b1348fe67, type: 3}
+  - {fileID: 9208738733748807262, guid: c8696f7254d8388449a6669afdcf392a, type: 3}
+  - {fileID: 6437457565899035353, guid: b6ea68fd8bb5b0e45b6e5eee07543b1c, type: 3}
+  item: {fileID: 1213311993564748290, guid: 232b7f40a7b9dcb418ad3794dd7928b4, type: 3}
+  text: {fileID: 0}
