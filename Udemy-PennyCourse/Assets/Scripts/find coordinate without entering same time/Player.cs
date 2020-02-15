@@ -10,17 +10,26 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     void Start()
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         diff = fuel.transform.position - this.transform.position;
+        Coord coord = PlayerMath.GetNormal(new Coord(diff));
+        diff = coord.ToVector();                                                                                    //// look at method first solutions.
+        this.transform.forward = PlayerMath.LookAt3D(new Coord(this.transform.forward),
+                                                     new Coord(this.transform.position),
+                                                     new Coord(fuel.transform.position)).ToVector();
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /*diff = fuel.transform.position - this.transform.position;
         Coord coord = PlayerMath.GetNormal(new Coord(diff));
         diff = coord.ToVector();
         float a = PlayerMath.Angle(new Coord(this.transform.forward), new Coord(diff));
         bool clockwise = false;
-        if (PlayerMath.Cross(new Coord(this.transform.forward),coord).y < 0)
+        if (PlayerMath.Cross(new Coord(this.transform.forward),coord).y < 0)                                        ///// look at method second solution.
         {
             clockwise = true;
         }
         Coord coordRot = PlayerMath.Rotate(new Coord(this.transform.forward), a, clockwise);
-        this.transform.forward = new Vector3(coordRot.x, coordRot.y, coordRot.z);
+        this.transform.forward = new Vector3(coordRot.x, coordRot.y, coordRot.z);*/
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 
     void Update()

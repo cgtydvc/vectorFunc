@@ -26,6 +26,18 @@ public class PlayerMath : MonoBehaviour
     {
         return (point1.x * point2.x + point1.y * point2.y + point1.z * point2.z);
     }
+    static public Coord LookAt3D(Coord forwardVector, Coord position, Coord directiontoTarget)
+    {
+        Coord direction = new Coord(position.x - directiontoTarget.x, position.y - directiontoTarget.y, position.z);
+        float angle = PlayerMath.Angle(forwardVector, direction);
+        bool clockwise = false;
+        if (PlayerMath.Cross(forwardVector,direction).z < 0)
+        {
+            clockwise = true;
+        }
+        Coord rotate = PlayerMath.Rotate(forwardVector, angle, clockwise);
+        return rotate;
+    }
     static public float Angle(Coord vector1, Coord vector2)
     {
         float dotPoint = Dot(vector1, vector2) / (Distance(new Coord(0, 0, 0), vector1) * Distance(new Coord(0, 0, 0), vector2));
@@ -45,5 +57,4 @@ public class PlayerMath : MonoBehaviour
     {
         return new Coord(vec1.y * vec2.z - vec1.z * vec2.y, vec1.z * vec2.x - vec1.x * vec2.z, vec1.x * vec2.y - vec1.y * vec2.x);
     }
-
 }
